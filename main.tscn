@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cieedvnwprxb8"]
+
+[ext_resource type="PackedScene" uid="uid://vnblwogas1oi" path="res://sprite.tscn" id="1_5evt6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Icon" parent="." node_paths=PackedStringArray("timer") instance=ExtResource("1_5evt6")]
+position = Vector2(570, 294)
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="Icon"]
+wait_time = 0.228
+autostart = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 195.0
+offset_top = 424.0
+offset_right = 509.0
+offset_bottom = 562.0
+text = "Toggle motion"
+
+[connection signal="pressed" from="Button" to="Icon" method="_on_button_pressed"]
